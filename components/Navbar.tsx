@@ -21,7 +21,22 @@ const Navbar = () => {
         </p>
 
       </Link>
+      
       <div className="flex-between gap-5">
+      <div className="document-list mx-3 overflow-hidden">
+              <Link href={`/ai`} className="flex flex-1 items-center gap-4">
+          <Image 
+            src="/icons/openai.png"
+            alt="Document"
+            width={40}
+            height={40}
+            className="mx-4 rounded-circle"
+            
+          />
+
+          
+       </Link>
+        </div>
         <SignedIn>
           <UserButton afterSignOutUrl="/sign-in" />
         </SignedIn>
