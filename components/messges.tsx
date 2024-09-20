@@ -1,6 +1,12 @@
 import { Card, CardHeader } from "@/components/ui/card";
-import {Message as MessageType} from "ai";
 import { Bot, User } from "lucide-react";
+
+// Define the MessageType manually
+type MessageType = {
+  id: number;
+  role: "user" | "assistant" | "system";
+  content: string;
+};
 
 export default function Message({ message }: { message: MessageType }) {
   const { role, content } = message;
