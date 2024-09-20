@@ -23,7 +23,7 @@ const Navbar = () => {
       </Link>
       
       <div className="flex-between gap-5">
-      <div className="document-list mx-3 overflow-hidden">
+      <div className="document-list mx-3">
               <Link href={`/ai`} className="flex flex-1 items-center gap-4">
           <Image 
             src="/icons/openai.png"

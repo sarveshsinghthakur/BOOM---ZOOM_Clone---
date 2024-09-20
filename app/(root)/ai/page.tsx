@@ -85,7 +85,7 @@ export default function Home() {
 
   return (
     
-    <main className="fixed h-full w-full bg-muted mx-5">
+    <main className="fixed h-full w-80 bg-muted mx-5">
          <h1 className=" text-cyan-800 border-emerald-700 from-neutral-100px flex flex-col justify-center items-center text-center my-5">Welcome to Gemini Era</h1>
       <div className="container h-full w-full flex flex-col py-8 mx-5">
         <div ref={chatWindowRef} className="flex-1 overflow-y-auto chat-window">
