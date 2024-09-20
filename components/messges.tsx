@@ -14,11 +14,11 @@ export default function Message({ message }: { message: MessageType }) {
   if (role === "assistant") {
     return (
       <div className="flex flex-col gap-3 p-6 whitespace-pre-wrap">
-        <div className="flex items-center gap-2 text-blue-50">
+        <div className="flex items-center gap-2">
           <Bot />
           Assistant:
         </div>
-        <div className="text-blue-50">{content}</div>
+        <div>{content}</div>
       </div>
     );
   }
@@ -26,7 +26,7 @@ export default function Message({ message }: { message: MessageType }) {
   return (
     <Card className="whitespace-pre-wrap">
       <CardHeader>
-        <div className="flex items-center gap-2 text-blue-50">
+        <div className="flex items-center gap-2">
           <User size={36} />
           {content}
         </div>
