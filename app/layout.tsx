@@ -1,15 +1,11 @@
-"use client";
-
-import React, { useEffect, ReactNode } from "react";
-import "@n8n/chat/style.css"; 
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
-
 import "@stream-io/video-react-sdk/dist/css/styles.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import N8nChat from "./components/N8nChat"; // ✅ Import client component
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,15 +19,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: ReactNode }>) {
-  useEffect(() => {
-    import("@n8n/chat").then(({ createChat }) => {
-      createChat({
-        webhookUrl: "https://sarvesh009.app.n8n.cloud/webhook/318baa7a-3761-49d7-89e9-c4a170fe69ee/chat", 
-      });
-    });
-  }, []);
-
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <ClerkProvider
@@ -51,6 +41,7 @@ export default function RootLayout({
         <body className={`${inter.className} bg-dark-2`}>
           <Toaster />
           {children}
+          <N8nChat /> 
         </body>
       </ClerkProvider>
     </html>
