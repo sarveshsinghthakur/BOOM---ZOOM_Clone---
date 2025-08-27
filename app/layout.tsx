@@ -5,8 +5,8 @@ import "@stream-io/video-react-sdk/dist/css/styles.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import N8nChat from "@/components/N8nChat"; 
-
+import N8nChat from "@/components/N8nChat";
+import Script from "next/script"; 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -38,14 +38,15 @@ export default function RootLayout({
           },
         }}
       >
-        <head>
-  <script src="https://unpkg.com/@n8n/chat/dist/chat.js"></script>
-</head>
-
         <body className={`${inter.className} bg-dark-2`}>
           <Toaster />
           {children}
-          <N8nChat /> 
+          <N8nChat />
+
+          <Script
+            src="https://unpkg.com/@n8n/chat/dist/chat.js"
+            strategy="afterInteractive"
+          />
         </body>
       </ClerkProvider>
     </html>
