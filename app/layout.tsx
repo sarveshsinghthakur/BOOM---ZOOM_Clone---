@@ -38,6 +38,10 @@ export default function RootLayout({
           },
         }}
       >
+        <head>
+  <script src="https://unpkg.com/@n8n/chat/dist/chat.js"></script>
+</head>
+
         <body className={`${inter.className} bg-dark-2`}>
           <Toaster />
           {children}
